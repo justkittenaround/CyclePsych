@@ -30,14 +30,14 @@ while (1):
     res = cv2.bitwise_and(frame, frame, mask=mask)
 
     # Display an original image
-    cv2.imshow('Original', frame)
+    cv2.imshow('Webcam', frame)
 
     # finds edges in the input image image and
     # marks them in the output map edges
     edges = cv2.Canny(frame, 100, 200)
 
     # Display edges in a frame
-    cv2.imshow('Edges', edges)
+    cv2.imshow('Edge Detect', edges)
 
     # Wait for Esc key to stop
     k = cv2.waitKey(5) & 0xFF
