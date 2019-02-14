@@ -21,6 +21,7 @@ while (1):
     # define range of red color in HSV
     lower_red = np.array([30, 150, 50])
     upper_red = np.array([255, 255, 180])
+    # examples: ([40,180,150] , [255,255,200])
 
     # create a red HSV colour boundary and
     # threshold HSV image
@@ -35,6 +36,9 @@ while (1):
     # finds edges in the input image image and
     # marks them in the output map edges
     edges = cv2.Canny(frame, 100, 200)
+     # lines (frame, 100, 200)
+    # dashes (frame, 200, 200)
+    # full-up (frame, 10, 20)
 
     # Display edges in a frame
     cv2.imshow('Edge Detect', edges)
@@ -43,7 +47,11 @@ while (1):
     k = cv2.waitKey(5) & 0xFF
     if k == 27:
         break
-
+        
+# -------------------------------------------------------------
+    # Chaninging color range in RSV and the edges count 
+    # greatly modifies what can be seen on the edge detect
+# -------------------------------------------------------------
 # Close the window
 cap.release()
 
